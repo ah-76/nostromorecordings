@@ -13,6 +13,22 @@
     -moz-osx-font-smoothing: grayscale; /* For Firefox on Mac OS */
     text-rendering: optimizeLegibility; /* Improve text rendering by using kerning and optional ligatures */
 }
+
+	    @font-face {
+    font-family: 'RoughR';
+    src: url('rough_r.woff2') format('woff2'),
+         url('rough_r.woff') format('woff'),
+         url('rough_r.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+.coming-soon-container h1 {
+    font-family: 'RoughR', sans-serif; /* Apply the custom font to the h1 title */
+    font-size: 4em;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    color: rgba(170,194,161,0.8);
+}
         /* Reset and Base Styles */
         * {
             margin: 0;
