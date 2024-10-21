@@ -5,31 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nostromo Recordings</title>
     
- 
     <style>
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
 
-		 	 html {
-    -webkit-font-smoothing: antialiased; /* For WebKit browsers like Safari and Chrome */
-    -moz-osx-font-smoothing: grayscale; /* For Firefox on Mac OS */
-    text-rendering: optimizeLegibility; /* Improve text rendering by using kerning and optional ligatures */
-}
+        @font-face {
+            font-family: 'RoughR';
+            src: url('rough_r.woff2') format('woff2'),
+                 url('rough_r.woff') format('woff'),
+                 url('rough_r.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-	    @font-face {
-    font-family: 'RoughR';
-    src: url('rough_r.woff2') format('woff2'),
-         url('rough_r.woff') format('woff'),
-         url('rough_r.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-.coming-soon-container h1 {
-    font-family: 'RoughR', sans-serif; /* Apply the custom font to the h1 title */
-    font-size: 6em !important;
-    letter-spacing: 5px;
-    margin-bottom: 20px;
-    color: rgba(170,194,161,0.8);
-}
-        /* Reset and Base Styles */
+        .coming-soon-container h1 {
+            font-family: 'RoughR', sans-serif;
+            font-size: 6em !important;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            color: rgba(170,194,161,0.8);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -45,22 +44,19 @@
             align-items: center;
             height: 100vh;
             text-align: center;
-	    overflow: hidden;
+            overflow: hidden;
         }
 
-a {
-    text-decoration: none; /* Remove underline */
-    color: rgba(70, 130, 180, 0.8); /* Pale blue at 0.8 opacity */
-    transition: color 0.3s ease; /* Smooth transition for color */
-}
+        a {
+            text-decoration: none;
+            color: rgba(70, 130, 180, 0.8);
+            transition: color 0.3s ease;
+        }
 
-a:hover {
-    color: rgba(173, 216, 230, 0.8); /* Darker blue at 0.8 opacity on hover */
-}
+        a:hover {
+            color: rgba(173, 216, 230, 0.8);
+        }
 
-
-
-        /* Centered Content Styles */
         .coming-soon-container {
             display: flex;
             flex-direction: column;
@@ -69,19 +65,17 @@ a:hover {
 
         .coming-soon-container h1 {
             font-size: 4em;
-			  			   letter-spacing: 5px;
-
+            letter-spacing: 5px;
             margin-bottom: 20px;
             color: rgba(170,194,161,0.8);
         }
 
         .coming-soon-container p {
             font-size: 1.5em;
-			   letter-spacing: 3px;
+            letter-spacing: 3px;
             color: #cccccc;
         }
 
-        /* Optional: Add a subtle animation */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -91,7 +85,6 @@ a:hover {
             animation: fadeIn 2s ease-in-out;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .coming-soon-container h1 {
                 font-size: 2em;
@@ -102,18 +95,28 @@ a:hover {
             }
         }
     </style>
+
+    <!-- JavaScript to mask email -->
+    <script type="text/javascript">
+        function displayEmail() {
+            var user = "nostromo";
+            var domain = "andrewhewitt.co";
+            var emailLink = document.getElementById("email-link");
+            emailLink.innerHTML = '<a href="mailto:' + user + '@' + domain + '">' + user + '@' + domain + '</a>';
+        }
+    </script>
 </head>
-<body>
+<body onload="displayEmail()">
 
     <!-- Centered Coming Soon Content -->
     <div class="coming-soon-container">
         <h1>Nostromo</h1>
-	<h1>Recordings</h1>
+        <h1>Recordings</h1>
         <p>&nbsp;</p>
-<img src="noctyra1.jpeg" alt="Noctyra Album Cover" width="250" height="250" style="filter: brightness(0.8); border-radius: 10px;">
-	    <p>&nbsp;</p>
-	    <p>&nbsp;</p>
-        <p><a href="mailto:nostromo@andrewhewitt.co">nostromo@andrewhewitt.co</a></p>
+        <img src="noctyra1.jpeg" alt="Noctyra Album Cover" width="250" height="250" style="filter: brightness(0.8); border-radius: 10px;">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p id="email-link"></p> <!-- Placeholder for email link -->
     </div>
 
 </body>
